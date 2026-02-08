@@ -23,5 +23,7 @@ How to Run Tests Locally
 
 --bash
 npm install
+
 npx playwright install
+
 npx playwright test
