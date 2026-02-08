@@ -1,31 +1,60 @@
-# Playwright SauceDemo Automation with CI
+Project Title:
+# Playwright Automation Framework – SauceDemo
 
-This repository demonstrates an end-to-end UI test automation framework using "Playwright" integrated with "GitHub Actions CI".
+Project Overview:
+
+This project demonstrates an end-to-end UI automation framework built using Playwright and JavaScript.
+The framework validates critical user journeys on the SauceDemo e-commerce application, including login,
+cart operations, and checkout flow, integrated with CI using GitHub Actions.
 
 The goal of this project is to showcase:
+
 - Automated UI testing
+ 
 - Continuous Integration (CI)
+  
 - Failure detection and reporting
+  
 - Artifact-based evidence (HTML reports)
 
+Tech Stack:
 
-#Tech Stack
+- Playwright (E2E Testing, UI Automation)
 
-- Playwright (E2E Testing)
 - JavaScript
+
+- Node.js
+
 - GitHub Actions (CI)
-- HTML Test Reports
+
+- HTML Reports (Playwright)
 
 
-#Test Coverage
+Test Scenarios Covered:
 
-- Page navigation validation
-- UI element visibility checks
-- Title and content assertions
-- Regression detection using assertions
+- User login validation  
 
+- Product listing verification
 
-#CI Pipeline Workflow
+- Add to cart validation
+
+- Cart contents verification
+
+- Checkout process validation
+
+- Order completion confirmation  
+
+CI/CD Integration:
+
+This project uses GitHub Actions to automatically execute Playwright tests on:
+- Every push to main branch
+  
+- Every pull request
+
+The CI pipeline installs dependencies, runs tests in a Linux environment,
+and uploads Playwright HTML reports as build artifacts.
+
+CI Pipeline Workflow
 
 1. Code pushed to `main`
 2. GitHub Actions automatically triggers Playwright tests
@@ -33,15 +62,14 @@ The goal of this project is to showcase:
 4. HTML reports generated as artifacts
 5. Pipeline fails on assertion errors
 
-
-#CI Failure Example
+CI Failure Example
 
 The following screenshots show a deliberately introduced failure to validate CI behavior:
 
-#GitHub Actions – Failed Run
+GitHub Actions – Failed Run
 [CI Failure](docs/ci-failure report.png)
 
-#Playwright HTML Report – Failed Tests
+Playwright HTML Report – Failed Tests
 [Playwright Failure](docs/playwright-HTML failure.png)
 
 This proves:
@@ -49,18 +77,17 @@ This proves:
 - Failures are detected automatically
 - CI blocks faulty changes
 
-
-#CI Recovery (Fix & Pass)
+CI Recovery (Fix & Pass)
 
 After fixing the assertions, tests were re-run successfully.
 
-#GitHub Actions – Successful Run
+GitHub Actions – Successful Run
 [CI Pass](docs/ci-pass report.png)
 
-#Playwright HTML Report – All Tests Passed
+Playwright HTML Report – All Tests Passed
 [Playwright Pass](docs/playwright-HTML pass.png)
 
-#Key Learnings
+Key Learnings
 
 - Built a complete Playwright automation framework
 - Integrated automated testing into CI
@@ -68,7 +95,19 @@ After fixing the assertions, tests were re-run successfully.
 - Generated and analyzed HTML test artifacts
 - Applied real-world CI testing practices
 
+Why This Project Matters:
 
-#Conclusion
+This project simulates real-world QA automation used in enterprise environments.
+It validates UI behavior through assertions, integrates CI for early defect detection,
+and generates traceable reports for debugging and auditing.
 
-This project reflects real-world QA automation and CI practices used in production environments to ensure application quality and prevent regressions.
+How To Run Locally:
+
+npm install
+
+npx playwright install
+
+npx playwright test
+
+npx playwright show-report
+
